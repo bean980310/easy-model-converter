@@ -15,7 +15,8 @@ from diffusers.pipelines.stable_diffusion.convert_from_ckpt import (
 def convert(base_model_path, checkpoint_path, LORA_PREFIX_UNET, LORA_PREFIX_TEXT_ENCODER, alpha):
     pipeline=StableDiffusionPipeline.from_pretrained(base_model_path, torch_dtype=torch.float32)
 
-    state_dict = load_file(checkpoint_path)
+    state_dict=pipeline.load_lora_weights(checkpoint_path)
+    # state_dict = load_file(checkpoint_path)
     visited = []
     
     for key in state_dict:
@@ -69,7 +70,8 @@ def convert(base_model_path, checkpoint_path, LORA_PREFIX_UNET, LORA_PREFIX_TEXT
 def convert_xl(base_model_path, checkpoint_path, LORA_PREFIX_UNET, LORA_PREFIX_TEXT_ENCODER, alpha):
     pipeline=StableDiffusionXLPipeline.from_pretrained(base_model_path, torch_dtype=torch.float32)
     
-    state_dict = load_file(checkpoint_path)
+    state_dict=pipeline.load_lora_weights(checkpoint_path)
+    # state_dict = load_file(checkpoint_path)
     visited = []
     
     for key in state_dict:
