@@ -3,4 +3,7 @@
 *.yaml
 *.pt
 *.ckpt
+*.bin
+*.json
+merges.txt
 __pycache__
