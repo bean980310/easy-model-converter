@@ -6,4 +6,5 @@
 *.bin
 *.json
 merges.txt
+upload_to_huggingface.ipynb
 __pycache__
