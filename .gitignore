@@ -1,2 +1,6 @@
 .DS_Store
 *.safetensors
+*.yaml
+*.pt
+*.ckpt
+__pycache__
